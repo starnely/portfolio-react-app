@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 1rem;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: rgb(29, 29, 41);
+    border-radius: 1rem;
+    padding: 1rem;
+    width: auto;
+}
+
+.display {
+    height: 10rem;
+    width: 15rem;
+    background: #4a4747;
+    color: #ffffff;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.calc-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.3rem;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(163, 163, 201);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgb(158, 158, 171);
+
+}
+
+.operator {
+    background-color: rgb(231, 170, 57);
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+.operator:hover {
+    background-color: rgb(192, 176, 147);
+}
+
+.main {
+    background-color: rgb(163, 163, 201);
+}
+
+.main:hover {
+    background-color: rgb(150, 150, 203);
+}

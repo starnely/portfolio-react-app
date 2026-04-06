@@ -1,0 +1,18 @@
+/* Header Responsiveness */
+@media (max-width: 800px) {
+  .nthigaHub-header-left-section {
+    width: unset;
+  }
+}
+
+@media (max-width: 575px) {
+  .nthigaHub-logo {
+    display: none;
+  }
+
+  .nthigaHub-mobile-logo {
+    display: block;
+    height: 35px;
+    margin-top: 5px;
+  }
+}

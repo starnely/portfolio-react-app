@@ -1,0 +1,516 @@
+/* ===================================
+   CSS CUSTOM PROPERTIES (Variables)
+   Define once, reuse everywhere.
+   Change a color here → updates the whole site.
+=================================== */
+:root {
+  --clr-bg: #0d0d0d;          /* Main background — near black */
+  --clr-surface: #1a1a1a;     /* Card/section background */
+  --clr-accent: #e8c547;      /* Yellow gold accent */
+  --clr-text: #f0ede6;        /* Main text — warm white */
+  --clr-muted: #888;          /* Secondary / muted text */
+  --clr-border: #2e2e2e;      /* Subtle borders */
+  --font-display: 'Playfair Display', serif;   /* Headlines */
+  --font-body: 'Roboto', sans-serif;          /* Body text */
+  --radius: 12px;             /* Rounded corners */
+  --transition: 0.3s ease;    /* Smooth transitions */
+}
+
+/* ===================================
+   RESET & BASE
+   Remove browser default spacing and set sensible defaults.
+=================================== */
+*, *::before, *::after {
+  box-sizing: border-box; /* Padding doesn't add to element width */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling when jumping to sections */
+  font-size: 62.5%; /* 1rem = 10px (62.5% of 16px) — makes rem calculations easier */
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none; /* Remove underlines from links */
+  color: inherit;
+}
+
+ul {
+  list-style: none; /* Remove bullet points */
+}
+
+img {
+  max-width: 100%; /* Images never overflow their container */
+  display: block;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+.navbar {
+  display: flex;               /* Put logo and links on the same row */
+  align-items: center;         /* Vertically center both */
+  justify-content: space-between; /* Push logo left, links right */
+  padding: 1.2rem 5%;          /* Top/bottom padding, left/right 5% of screen */
+  position: sticky;            /* Stays at top when scrolling */
+  top: 0;
+  z-index: 100;                /* Sits above all other content */
+  background: rgba(13,13,13,0.85); /* Semi-transparent dark background */
+  backdrop-filter: blur(12px); /* Frosted glass blur effect */
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--clr-accent);
+  letter-spacing: -1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem; /* Space between each link */
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--clr-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+  position: relative;         /* Needed for the underline pseudo-element */
+}
+
+/* Underline animation on hover using ::after pseudo-element */
+.nav-links a::after {
+  content: '';                /* Required — pseudo-elements need content */
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;                   /* Starts at 0 width */
+  height: 2px;
+  background: var(--clr-accent);
+  transition: width var(--transition); /* Animates to full width on hover */
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--clr-text);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%; /* Expands the underline */
+}
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--clr-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;        /* Pill shape */
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+.btn-primary {
+  background: var(--clr-accent);
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--clr-border);
+  color: var(--clr-text);
+}
+
+.btn-outline:hover {
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+.hero {
+  min-height: calc(100vh - 70px); /* Full viewport height minus navbar */
+  display: flex;
+  flex-direction: column;         /* Stack items vertically */
+  justify-content: center;        /* Center vertically */
+  padding: 0 10%;
+  position: relative;
+}
+
+/* Decorative background circle */
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(232,197,71,0.08) 0%, transparent 70%);
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  pointer-events: none; /* Can't be clicked or hovered */
+}
+
+.hero-tag {
+  font-size: 1rem;
+  color: var(--clr-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem); /* clamp(min, preferred, max) — responsive */
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 1.2rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--clr-muted);
+  margin-bottom: 2.5rem;
+}
+
+.hero-subtitle span {
+  color: var(--clr-accent);
+  font-weight: 500;
+}
+
+.cursor {
+  animation: blink 1s step-end infinite; /* JS-independent cursor blink */
+  color: var(--clr-accent);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap; /* Buttons wrap to next line on small screens */
+}
+
+/* ===================================
+   PAGE HEADER (About, Projects, Contact)
+=================================== */
+.page-header {
+  text-align: center;
+  padding: 5rem 5% 3rem;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.page-header p {
+  color: var(--clr-muted);
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* ===================================
+   ABOUT PAGE
+=================================== */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Image takes 1 part, text takes 1.5 */
+  gap: 4rem;
+  padding: 3rem 10%;
+  align-items: start;
+}
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 1;            /* Perfect square */
+  background: var(--clr-surface);
+  border-radius: var(--radius);
+  border: 2px dashed var(--clr-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-muted);
+  font-size: 1.2rem;
+}
+
+.about-text h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  color: var(--clr-muted);
+  margin-bottom: 1rem;
+}
+
+.about-text h3 {
+  margin: 2rem 0 1rem;
+  font-size: 1.1rem;
+  color: var(--clr-accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Skill bars */
+.skill-item {
+  margin-bottom: 1.2rem;
+}
+
+.skill-item span {
+  font-size: 0.85rem;
+  color: var(--clr-muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--clr-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0;                   /* Starts at 0 — JS animates to the data-level */
+  background: var(--clr-accent);
+  border-radius: 3px;
+  transition: width 1.2s ease; /* Smooth animation */
+}
+
+/* ===================================
+   PROJECTS PAGE
+=================================== */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 5%;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--clr-surface);
+  color: var(--clr-muted);
+  border: 1px solid var(--clr-border);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  transition: all var(--transition);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--clr-accent);
+  color: #000;
+  border-color: var(--clr-accent);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Auto-fill responsive grid */
+  gap: 2rem;
+  padding: 2rem 5% 5rem;
+}
+
+.project-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-6px); /* Lifts card on hover */
+  border-color: var(--clr-accent);
+}
+
+.project-img {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: var(--clr-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.project-tags span {
+  background: rgba(232,197,71,0.1);
+  color: var(--clr-accent);
+  padding: 0.2rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+}
+
+/* Hidden state for filtered-out cards */
+.project-card.hidden {
+  display: none;
+}
+
+/* ===================================
+   CONTACT PAGE
+=================================== */
+.contact-section {
+  max-width: 600px;           /* Limits width for readability */
+  margin: 0 auto;             /* Centers horizontally */
+  padding: 2rem 5% 6rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: var(--clr-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.2rem;
+  color: var(--clr-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition);
+  outline: none;              /* Remove default browser outline */
+  resize: vertical;           /* Textarea only resizes vertically */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--clr-accent); /* Gold border when focused */
+}
+
+/* Error state — JS adds this class */
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #e85454;
+}
+
+.error-msg {
+  color: #e85454;
+  font-size: 0.8rem;
+  min-height: 1rem;           /* Prevents layout shift when message appears */
+}
+
+.success-msg {
+  color: #4caf79;
+  font-size: 0.9rem;
+  text-align: center;
+  min-height: 1.5rem;
+}
+
+/* ===================================
+   RESPONSIVE (Mobile)
+   @media applies these rules only when screen is ≤768px wide
+=================================== */
+@media (max-width: 768px) {
+  /* Hide nav links on mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--clr-surface);
+    padding: 2rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  /* JS adds this class to show the mobile menu */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Show hamburger button on mobile */
+  .hamburger {
+    display: block;
+  }
+
+  .hero {
+    padding: 0 6%;
+  }
+
+  /* Stack about page vertically on mobile */
+  .about-content {
+    grid-template-columns: 1fr;
+    padding: 2rem 6%;
+  }
+}

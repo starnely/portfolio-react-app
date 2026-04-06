@@ -1,5 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 
+import easybank from '../assets/easybank.jpg';
+import manageLanding from '../assets/manageLanding-page.jpg';
+import calculator from '../assets/calculator.jpg';
+import youtube from '../assets/youtube.jpg';
+import portfolio from '../assets/portfolio.jpg';
+import ecommerce from '../assets/E-commerce.png';
+
 export default function Projects() {
     /* ============================================
        1. PROJECT DATA
@@ -8,37 +15,37 @@ export default function Projects() {
         {
             title: "Manage Bank Landing Page",
             description: "A modern banking landing page with responsive design and smooth animations.",
-            image: "/images/manageLanding-page.jpg",
+            image: manageLanding,
             link: "projects/manage-landing-page-master-main/index.html"
         },
         {
             title: "Easy Bank Landing Page",
             description: "A clean and professional banking interface with interactive features.",
-            image: "/images/easybank.jpg",
+            image: easybank,
             link: "projects/easybank-landing-page-master-main/index.html"
         },
         {
             title: "Super Simple Math Calculator",
             description: "A functional calculator built with vanilla JavaScript.",
-            image: "/images/calculator.jpg",
+            image: calculator,
             link: "projects/calc-html-css-js/index.html"
         },
         {
             title: "YouTube Web Learning",
             description: "A simple YouTube-like web application for learning purposes.",
-            image: "/images/youtube.jpg",
+            image: youtube,
             link: "projects/youtube_web_learning-main/index.html"
         },
         {
             title: "Professional Portfolio",
             description: "Turning ideas into impactful results.",
-            image: "/images/portfolio.jpg",
+            image: portfolio,
             link: "/projects/my-portfolio/index.html"
         },
         {
             title: "E-Commerce Solutions",
             description: "From product to purchase—optimized for results at every step.",
-            image: "/images/E-commerce.png",
+            image: ecommerce,
             link: "/projects/nthiga-hub/nthigaHub.html"
         }
     ];

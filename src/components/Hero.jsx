@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import profile from '../assets/profile.jpeg';
 
 export default function Hero() {
 
@@ -72,7 +73,7 @@ export default function Hero() {
         <section className="hero" id="hero">
             <div className="hero-content">
                 {/* PROFILE IMAGE */}
-                <img src="/images/profile.jpeg" className="profile-image" alt="profile" />
+                <img src={profile} className="profile-image" alt="profile" />
 
                 {/* INTRO TEXT */}
                 <p className="intro">{intro}</p>

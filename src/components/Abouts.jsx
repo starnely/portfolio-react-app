@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import developer from '../assets/web-developers.png';
 
 
 export default function Abouts() {
@@ -62,7 +63,7 @@ export default function Abouts() {
                 {/* LEFT SIDE IMAGE */}
                 <div className="left-side">
                     <div className="about-image">
-                        <img src="/images/web-developers.png" alt="profile" />
+                        <img src={developer} alt="profile" />
                     </div>
                 </div>
 

@@ -1,0 +1,222 @@
+/* =================================
+   <= 1200px — 3 cards + horizontal scroll
+   ================================= */
+@media(max-width:75rem){
+     html{
+        font-size: 90%;
+    }
+    
+    h1{
+    font-size: 2.5rem; /* 48.8px */
+}
+    h2{
+        font-size: 2rem; /* 39px */
+    }
+    .navbar{
+        padding: 2rem 2rem;
+    }
+    .navbar-menu li{
+        gap: 1rem;
+    } 
+    .main-container{
+        width: 100%;
+    }
+    
+  /* SECTION THREE */
+  .card-group{
+        overflow-x: auto;
+        /* overflow-y: hidden; */
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    } 
+    .card {
+       flex:0 0 calc((100% - 2rem) / 3); /* 3 cards visible */
+        scroll-snap-align: start;
+        text-wrap: wrap;
+  }
+  /* hide scrollbar */
+    .card-group::-webkit-scrollbar {
+        display: none;
+  }
+    .card-group {
+     scrollbar-width: none;
+  }
+}
+
+
+/* =================================
+   <= 840px — 2 cards + horizontal scroll
+   ================================= */
+@media (max-width: 53rem) {
+   html{
+        font-size: 85%;
+    }
+    .get-started-btn{
+      border-radius: 40px;
+      padding: 0.5rem 1rem;
+  }
+  
+  .section-two-container{
+    gap: 1rem;
+    }
+    .left{
+        gap: 2rem;
+    }
+    .right{
+        gap: 1rem;
+    }
+      .name-logo{
+        width: 9rem;
+    }
+      footer{
+          padding: 1rem;
+      }
+
+    .logo-icon{
+        gap: 1.5rem;
+    }
+    .footer-icons{
+        gap: 0.5rem;
+    }
+    .footer-nav{
+        gap: 2rem;
+    }
+}
+
+/* =================================
+   <= 768px — 2 cards + horizontal scroll
+   ================================= */
+@media (max-width:48rem) {
+  html{
+        font-size: 75%;
+    }
+    .logo{
+      width: 8rem;
+    }
+    .navbar-menu li{
+        gap: 0.5rem;
+    } 
+  .card {
+    flex: 0 0 calc((100% - 1rem) / 2); /* 2 cards visible */
+  }
+}
+
+/* =================================
+   <= 375px 
+   ================================= */
+@media (max-width: 36rem) {
+   /* ------HEADER----- */
+  .header-btn{
+    display: none;
+  }
+  .menu-toggle{
+    display: block;
+    margin-left: auto;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .navbar-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 10px 0;
+    width: 90%;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .navbar-menu.active{
+    display: flex;
+  }
+   .navbar-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column; /* stacked vertically */
+        gap: 0.5rem;
+    }
+
+    .navbar-menu li {
+        margin: 0.5rem 0;
+    }
+
+  /* ------SECTION ONE(HERO)----- */
+   .hero-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+    
+  }
+  /* ------SECTION TWO----- */
+  .section-two-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+  }
+  .left{
+    text-align: center;
+  }
+  .right-content{
+    gap: 0.5rem;
+  }
+
+  /* ------SECTION THREE----- */
+  .card {
+    flex: 0 0 calc((100% - 1rem) / 1); 
+    flex-shrink: 1 auto;
+    max-width: 100%;
+    width: 100%;
+    }
+
+  /* ------SECTION FOUR----- */
+  .section-four-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+
+  /* ------FOOTER----- */
+  footer{
+    padding: 1rem 0.5rem;
+  }
+  .footer-container{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+  .logo-icon{
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .footer-icons{
+    display: flex;
+    text-align: center;
+    gap: 2.5rem;
+    
+  }
+  .update-copyright{
+    align-items: center;
+  }
+  .footer-nav{
+    text-align: center;
+    padding: 1rem;
+    /* gap: 6rem; */
+  }
+}
+

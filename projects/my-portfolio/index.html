@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- === META === -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- === TITLE === -->
+    <title>My Portfolio</title>
+
+    <!-- === PRECONNECT FOR FONTS (performance) === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- === GOOGLE FONTS === -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- === CSS === -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">Nthiga</a>
+
+        <ul class="nav-links js-nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <button class="hamburger js-hamburger" id="hamburger">&#9776;</button>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <main>
+        <section class="hero">
+            <span class="hero-tag">👋 Hello, I'm</span>
+            <h1 class="hero-title">Nthiga Stan</h1>
+            <p class="hero-subtitle">I build <span class="js-typed-text" id="typed-text"></span><span class="cursor">|</span></p>
+            <div class="hero-buttons">
+                <a href="projects.html" class="btn btn-primary">View My Work</a>
+                <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- === META === -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- === TITLE === -->
+  <title>Contact — My Portfolio</title>
+
+  <!-- === PRECONNECT FOR FONTS (performance) === -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- === GOOGLE FONTS === -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- === CSS === -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Nthiga</a>
+    <ul class="nav-links js-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button class="hamburger js-hamburger" id="hamburger">&#9776;</button>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <h1>Contact Me</h1>
+      <p>Have a question or want to work together?</p>
+    </section>
+
+    <section class="contact-section">
+      <!-- The form — JS will handle validation before "submit" -->
+      <form class="contact-form js-contact-form" id="contactForm" novalidate>
+        <!-- novalidate disables built-in browser validation so JS can do it -->
+
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <!-- id must match label's "for" — improves accessibility -->
+          <input type="text" id="name" class="js-name-input" placeholder="John Doe" required>
+          <!-- Error message — JS will show/hide this -->
+          <span class="error-msg" id="nameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="js-email-input" placeholder="john@example.com" required>
+          <span class="error-msg" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" class="js-text-area" rows="5" placeholder="Your message here..." required></textarea>
+          <span class="error-msg" id="messageError"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <!-- Success message shown by JS after valid submit -->
+        <p class="success-msg" id="successMsg"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

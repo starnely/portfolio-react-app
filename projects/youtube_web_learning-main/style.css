@@ -1,0 +1,318 @@
+
+/*GENERAL STYLING*/
+*{
+    margin: 0;
+}
+body{
+    padding-top: 0px;
+    padding-left: 120px;
+}
+p{
+    margin-top: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 0px;
+    color: gray;
+}
+
+
+
+/*HEADER STYLE*/
+.header{
+    height: 70px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+    border-bottom: 1px solid rgb(157, 255, 0);
+    margin-bottom: 20px;
+    background-color: white;
+    z-index: index 100;;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.left_section{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.menu{
+    width: 40px;
+    height: 32px;
+    padding-left: 30px;
+    
+}
+.logo{
+    width: 125px;
+    height: 125px;
+    padding-left: 30px;
+}
+.middle_section{
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.input{
+    flex: 1;
+    height: 50px;
+    width: 0;
+    min-width: 0;
+    font-size: 16px;
+    margin-left: 60px;
+    padding-left: 12px;
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 229, 229);
+    box-shadow: inset 1px 1px 2px 0.15 rgb(147, 145, 145);
+
+}
+.input::placeholder{
+    font-size: 24px;
+}
+
+.button_1{
+    background-color: rgb(247, 244, 244);
+    height: 54px;
+    width: 83px;
+    margin-left: -1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 229, 229);
+    margin-right: 10px;
+    cursor: pointer;
+}
+.button_2{
+    height: 50px;
+    width: 50px;
+    border-width: 1px;
+    border-style: solid;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.button_1, .button_2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search_button{
+    height: 34px;
+}
+.voice_button{
+    height: 34px;
+}
+.my_upload, .my_apps, .my_notification{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button_1 .tooltip, .button_2 .tooltip{
+   background-color: rgb(202, 198, 198);
+    color: white;
+    position: absolute;
+    bottom:-40px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 2px;
+    font-size: 15px;
+    opacity:  0;
+    pointer-events: none;
+    white-space: nowrap; 
+}
+ .my_upload .tooltip, .my_apps .tooltip, .my_notification .tooltip{
+    background-color: rgb(202, 198, 198);
+    color: white;
+    position: absolute;
+    bottom:-40px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 2px;
+    font-size: 15px;
+    opacity:  0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.button_1:hover .tooltip, .button_2:hover .tooltip{
+    opacity: 1;
+}
+.my_upload:hover .tooltip, .my_apps:hover .tooltip, .my_notification:hover .tooltip{
+    opacity: 1;
+}
+.my_notification {
+    position: relative;
+}
+.notification_count{
+    position: absolute;
+    background-color: red;
+    color: white;
+    top: -4px;
+    right: -4.5px;
+    height: 16px;
+    width: 11px;
+    padding-left: 5px;
+    border-radius: 9px;
+}
+.right_section{
+    width: 182px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 24px;
+    margin-left: 29px;
+    flex-shrink: 0;
+}
+.right_section .upload_icon, .right_section .apps_icon, .right_section .notification_icon{
+    height:32px;
+    cursor: pointer;
+}
+.profile{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+.create{
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+/*SIDEBAR STYLE*/
+.sidebar{
+    position: fixed;
+    left: 0;
+    top: 56px;
+    bottom: 0;
+    background-color: white;
+    width: 100px;
+    padding-top: 4px;  
+}
+
+.sidebar .sidebar_icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 10px;
+    height: 74px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+.sidebar .sidebar_icons:hover{
+    background-color: rgb(230, 224, 224);
+    transition: 0.2s;
+}
+.sidebar .sidebar_icons .icon_div .icon{
+    height: 32px;
+    margin-bottom: 6.5px;
+}
+.sidebar .sidebar_icons .label_icons{
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+
+
+/*MAIN PAGE STYLE*/
+.grid_page{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 8px;
+    row-gap: 22px;
+    padding: 20px;
+    margin-top: 80px;
+    background-color:rgb(247, 243, 243);
+}
+@media (max-width: 1000px) {
+    .grid_page {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1001px) and (max-width: 1399px){
+    .grid_page {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1400px) {
+    .grid_page {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.main_image{
+    position: relative;
+}
+.timer{
+    position: absolute;
+    background-color: black;
+    color: white;
+    bottom: 14px;
+    right: 10px;
+    padding: 4px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+.image1{
+    width: 100%;
+}
+.grid_video_info{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+.profile_picture{
+width: 50px;
+}
+.paragraph_1{
+    /*width: 200px;*/
+    margin-left: 10px;
+}
+.my_profile{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+.paragraph_2{
+    /*width: 200px;*/
+    margin-left: 10px;
+}
+.video_title{
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+.video_author, .video_stats{
+    font-size: 15px;
+    color: gray;
+}
+.video_stats{
+    margin-top: 25px;
+}
+
+.main_1{
+    width: 100%;
+    
+}
+.para{
+    width: 300px;
+}

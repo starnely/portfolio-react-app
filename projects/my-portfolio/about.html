@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- === META === -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- === TITLE === -->
+    <title>About — My Portfolio</title>
+
+    <!-- === PRECONNECT FOR FONTS (performance) === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- === GOOGLE FONTS === -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- === CSS === -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">Nthiga</a>
+        <ul class="nav-links js-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="hamburger js-hamburger" id="hamburger">&#9776;</button>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h1>About Me</h1>
+            <p>A little bit about who I am and what I do.</p>
+        </section>
+
+        <section class="about-content">
+            <!-- Image on the left -->
+            <div class="about-image">
+                <div class="image-placeholder">
+                    <img src="images/profile-picture.jpg" alt="Profile picture">
+                </div>
+            </div>
+
+            <!-- Text on the right -->
+            <div class="about-text">
+                <h2>Who am I?</h2>
+                <p>I'm a web developer based in Tunisia, passionate about creating beautiful and functional websites. I
+                    love clean code and even cleaner design.</p>
+                <p>I'm currently learning HTML, CSS, JavaScript, and Git — and building this portfolio to track my
+                    journey.</p>
+
+                <!-- Skills list — JS will animate these bars -->
+                <h3>Skills</h3>
+                <div class="skills">
+                    <div class="skill-item">
+                        <span>HTML</span>
+                        <!-- data-level is a custom attribute JS will read to set the bar width -->
+                        <div class="skill-bar">
+                            <div class="skill-fill js-skill-fill" data-level="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>CSS</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill js-skill-fill" data-level="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill js-skill-fill" data-level="60"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
